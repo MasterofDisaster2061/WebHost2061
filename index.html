@@ -1,0 +1,576 @@
+
+<html>
+<head>
+<title>Aich Aich</title>
+<link rel="stylesheet" href="main2.css">
+</head>
+<body style="background-image:url('v.jpg');background-attachment:fixed;height:1000px;" onload="datee()">
+<script src="main.js"></script>
+<br><br><br>
+<div style="background-color:#949494;width:800px;border:5px double;margin-left:30px;">
+<h1 style="font-size:50px;margin-left:10px;margin-top:10px;">Calculator</h1>
+<form>
+<p style="margin-left:10px;font-size:20px;">First value= <input type="Number" id="haha" required style="margin-left:24px;border:double 5px;font-size:16px;" title="Please enter the value"></p>
+<p style="margin-left:10px;font-size:20px;">Second value= <input type="Number" id="haha2" required style="margin-left:2px;border:double 5px;font-size:16px;" title="Please enter the value"></p>
+<button type="reset" onclick="ha()"  style="position:absolute;margin-left:120px;font-size:20px;">Clear</button>
+</form>
+<button onclick="my()" style="margin-left:10px;font-size:20px;">Calculate</button>
+<br><br>
+<hr size=4 color="black" style="margin-left:5px;width:788;">
+<p id="demo" style="margin-left:18px;font-size:20px;">Enter values for calculation</p>
+<p id="demo2"></p>
+<hr size=4 color="black" style="margin-left:5px;width:788;"><br><br></div><br><br><br><br><br>
+<div style="background-color:#949494;width:800px;border:5px double;margin-left:30px;">
+<h1 style="font-size:50px;margin-left:10px;margin-top:15px;">Number System Conversion</h1>
+<p style="margin-left:10px;font-size:20px;">The base of the number is in:</p>
+<input type="button" value="Decimal" style="margin-left:10px;font-size:20px;background-color:white;" onclick="deci()" id="boom1">
+<input type="button"  value="Binary" style="margin-left:30px;font-size:20px;background-color:white;" onclick="bin()" id="boom2">
+<input type="button" value="Octal" style="margin-left:30px;font-size:20px;background-color:white;" onclick="oct()" id="boom3">
+<input type="button" value="Hexadecimal" style="margin-left:30px;font-size:20px;background-color:white;" onclick="hex()" id="boom4"><br><br>
+<hr size=4 color="black" style="margin-left:5px;width:788;">
+<p id="yoo" style="margin-left:10px;font-size:20px;">Select the base of number and enter the number</p>
+<p id="yoo2"></p>
+<hr size=4 color="black" style="margin-left:5px;width:788;"><br><br>
+</div>
+<br><br><br><br><br>
+<div style="background-color:#949494;width:800px;border:5px double;margin-left:30px;">
+<h1 style="font-size:50px;margin-left:10px;margin-top:15px;">Number System Converter</h1>
+<button onclick="clean()" class="button" style="font-size:20px;margin-left:678px;margin-top:150px;height:50px;width:100px;position:absolute;">Clear All</button>
+<p style="font-size:20px;margin-left:10px;">Decimal number: <input id="deci3" class="input" onkeyup="converter('D')" style="margin-left:38px;font-size:16px;" size=40 title="Enter 0-9 digits only"><button class="buttonc" onclick="clean1()" style="font-size:16px;margin-left:5px;">Clear</button></p>
+<p style="font-size:20px;margin-left:10px;">Binary number: <input id="bin3" class="input" onkeyup="converter('B')" style="margin-left:50px;font-size:16px;" size=40 title="Enter 0-1 digits only"><button class="buttonc" onclick="clean2()" style="font-size:16px;margin-left:5px;">Clear</button></p>
+<p style="font-size:20px;margin-left:10px;">Octal number: <input id="oct3" class="input" onkeyup="converter('O')" style="margin-left:61px;font-size:16px;" size=40 title="Enter 0-7 digits only"><button class="buttonc" onclick="clean3()" style="font-size:16px;margin-left:5px;">Clear</button></p>
+<p style="font-size:20px;margin-left:10px;">Hexadecimal number: <input id="hex3" class="input" onkeyup="converter('H')" style="font-size:16px;" size=40 title="Enter 0-9 and A-F only"><button class="buttonc" onclick="clean4()" style="font-size:16px;margin-left:5px;">Clear</button></p>
+<br><br>
+</div>
+<br><br><br><br><br>
+<div style="background-color:#949494;width:428px;border:5px double;margin-left:30px;">
+<div id="div100">
+<h1 style="font-size:50px;margin-left:10px;margin-top:15px;text-align:center;">Unit Converter</h1>
+<button style="margin-left:24px;font-size:25px;width:182px;text-align:center;" onclick="length()">Length</button>
+<button style="margin-left:10px;font-size:25px;width:182px;text-align:center;" onclick="area()">Area</button><br><br>
+<button style="margin-left:24px;font-size:25px;width:182px;text-align:center;" onclick="volume()">Volume</button>
+<button style="margin-left:10px;font-size:25px;width:182px;text-align:center;" onclick="temp()">Temperature</button><br><br>
+<button style="margin-left:24px;font-size:25px;width:182px;text-align:center;" onclick="mass()">Mass</button>
+<button style="margin-left:10px;font-size:25px;width:182px;text-align:center;" onclick="time()">Time</button><br><br>
+</div>
+<div id="div11" style="display:none;">
+<h1 style="font-size:50px;margin-left:10px;margin-top:15px;text-align:center;">Length Converter</h1>
+<button style="margin-left:24px;font-size:22px;width:100px;text-align:center;" onclick="back()"><i>< </i>Back</button><br><br>
+<p  style="margin-left:24px;font-size:20px;">Metre: <input class="input" id="m" style="margin-left:50px;width:270px;font-size:20px;" onkeyup="convertl('m')"></p>
+<p style="margin-left:24px;font-size:20px;">Centimeter: <input class="input" id="cm" style="margin-left:9px;width:270px;font-size:20px;" onkeyup="convertl('cm')"></p>
+<p style="margin-left:24px;font-size:20px;">Millimeter: <input class="input" id="mm" style="margin-left:12px;width:270px;font-size:20px;" onkeyup="convertl('mm')"></p>
+<p style="margin-left:24px;font-size:20px;">Micrometer: <input class="input" id="mim" style="margin-left:4px;width:270px;font-size:20px;" onkeyup="convertl('mim')"></p>
+<p style="margin-left:24px;font-size:20px;">Nanometer: <input class="input" id="nm" style="margin-left:10px;width:270px;font-size:20px;" onkeyup="convertl('nm')"></p>
+<p style="margin-left:24px;font-size:20px;">Inch: <input class="input" id="in" style="margin-left:63px;width:270px;font-size:20px;" onkeyup="convertl('in')"></p>
+<p style="margin-left:24px;font-size:20px;">Foot: <input class="input" id="ft" style="margin-left:61px;width:270px;font-size:20px;" onkeyup="convertl('ft')"></p>
+<p style="margin-left:24px;font-size:20px;">Kilometer: <input class="input" id="km" style="margin-left:17px;width:270px;font-size:20px;" onkeyup="convertl('km')"></p>
+<p style="margin-left:24px;font-size:20px;">Mile: <input class="input" id="mi" style="margin-left:61px;width:270px;font-size:20px;" onkeyup="convertl('mi')"></p><br>
+<button style="margin-left:244px;font-size:22px;width:160px;text-align:center;" onclick="clearl()">Clear All</button>
+<br>
+</div>
+<div id="div22" style="display:none;">
+<h1 style="font-size:50px;margin-left:10px;margin-top:15px;text-align:center;">Area Converter</h1>
+<button style="margin-left:24px;font-size:22px;width:100px;text-align:center;" onclick="back2()"><i>< </i>Back</button><br><br>
+<p  style="margin-left:24px;font-size:20px;">Metre<sup>2</sup>: <input class="input" style="margin-left:50px;width:263px;font-size:20px;" id="m2" onkeyup="converta('m2')"></p>
+<p style="margin-left:24px;font-size:20px;">Centimeter<sup>2</sup>: <input class="input" style="margin-left:9px;width:263px;font-size:20px;" id="cm2" onkeyup="converta('cm2')"></p>
+<p style="margin-left:24px;font-size:20px;">Millimeter<sup>2</sup>: <input class="input" style="margin-left:12px;width:263px;font-size:20px;" id="mm2" onkeyup="converta('mm2')"></p>
+<p style="margin-left:24px;font-size:20px;">Inch<sup>2</sup>:<input class="input" style="margin-left:66px;width:263px;font-size:20px;" id="in2" onkeyup="converta('in2')"></p>
+<p style="margin-left:24px;font-size:20px;">Foot<sup>2</sup>:<input class="input" style="margin-left:64px;width:263px;font-size:20px;" id="ft2" onkeyup="converta('ft2')"></p>
+<p style="margin-left:24px;font-size:20px;">Hectare: <input class="input" style="margin-left:43px;width:263px;font-size:20px;" id="hec" onkeyup="converta('hec')"></p>
+<p style="margin-left:24px;font-size:20px;">Acre: <input class="input" style="margin-left:66px;width:263px;font-size:20px;" id="acr" onkeyup="converta('acr')"></p>
+<p style="margin-left:24px;font-size:20px;">Kilometer<sup>2</sup>: <input class="input" style="margin-left:16px;width:263px;font-size:20px;" id="km2" onkeyup="converta('km2')"></p>
+<p style="margin-left:24px;font-size:20px;">Mile<sup>2</sup>:<input class="input" style="margin-left:64px;width:263px;font-size:20px;" id="mi2" onkeyup="converta('mi2')"></p>
+<br>
+<button style="margin-left:244px;font-size:22px;width:160px;text-align:center;" onclick="cleara()">Clear All</button>
+<br>
+</div>
+<div id="div33" style="display:none;">
+<h1 style="font-size:50px;margin-left:10px;margin-top:15px;text-align:center;">Volume Converter</h1>
+<button style="margin-left:24px;font-size:22px;width:100px;text-align:center;" onclick="back3()"><i>< </i>Back</button><br><br>
+<p style="margin-left:24px;font-size:20px;">Metre<sup>3</sup>: <input class="input" style="margin-left:50px;width:263px;font-size:20px;" id="m3" onkeyup="convertv('m3')"></p>
+<p style="margin-left:24px;font-size:20px;">Centimeter<sup>3</sup>: <input class="input" style="margin-left:9px;width:263px;font-size:20px;" id="cm3" onkeyup="convertv('cm3')"></p>
+<p style="margin-left:24px;font-size:20px;">Millimeter<sup>3</sup>: <input class="input" style="margin-left:12px;width:263px;font-size:20px;" id="mm3" onkeyup="convertv('mm3')"></p>
+<p style="margin-left:24px;font-size:20px;">Inch<sup>3</sup>: <input class="input" style="margin-left:62px;width:263px;font-size:20px;" id="in3" onkeyup="convertv('in3')"></p>
+<p style="margin-left:24px;font-size:20px;">Foot<sup>3</sup>: <input class="input" style="margin-left:59px;width:263px;font-size:20px;" id="ft3" onkeyup="convertv('ft3')"></p>
+<p style="margin-left:24px;font-size:20px;">Litre: <input class="input" style="margin-left:65px;width:263px;font-size:20px;" id="li" onkeyup="convertv('li')"></p>
+<p style="margin-left:24px;font-size:20px;">Milli-litre: <input class="input" style="margin-left:25px;width:263px;font-size:20px;" id="ml" onkeyup="convertv('ml')"></p>
+<p style="margin-left:24px;font-size:20px;">Gallon: <input class="input" style="margin-left:48px;width:263px;font-size:20px;" id="ga" onkeyup="convertv('ga')"></p>
+<br>
+<button style="margin-left:244px;font-size:22px;width:160px;text-align:center;" onclick="clearv()">Clear All</button>
+<br>
+</div>
+<div id="div44" style="display:none;">
+<h1 style="font-size:41px;margin-top:15px;text-align:center;">Temperature Converter</h1>
+<button style="margin-left:24px;font-size:22px;width:100px;text-align:center;" onclick="back4()"><i>< </i>Back</button><br><br>
+<p style="margin-left:24px;font-size:20px;">Celsius: <input id="cel" onkeyup="convertt('cel')" class="input" style="margin-left:36px;width:270px;font-size:20px;"></p>
+<p style="margin-left:24px;font-size:20px;">Fahrenheit: <input id="fah" onkeyup="convertt('fah')" class="input" style="margin-left:9px;width:270px;font-size:20px;"></p>
+<p style="margin-left:24px;font-size:20px;">Kelvin: <input id="kel" onkeyup="convertt('kel')" class="input" style="margin-left:40px;width:270px;font-size:20px;"></p>
+<p style="margin-left:24px;font-size:20px;">Reamur: <input id="rea" onkeyup="convertt('rea')" class="input" style="margin-left:32px;width:270px;font-size:20px;"></p>
+<p style="margin-left:24px;font-size:20px;">Rankine: <input id="rin" onkeyup="convertt('rin')" class="input" style="margin-left:31px;width:270px;font-size:20px;"></p>
+<br>
+<button style="margin-left:244px;font-size:22px;width:160px;text-align:center;" onclick="cleart()">Clear All</button>
+<br>
+</div>
+<div id="div55" style="display:none;">
+<h1 style="font-size:50px;margin-top:15px;text-align:center;">Mass Converter</h1>
+<button style="margin-left:24px;font-size:22px;width:100px;text-align:center;" onclick="back5()"><i>< </i>Back</button><br><br>
+<p style="margin-left:24px;font-size:20px;">Kilogram: <input id="kg" onkeyup="convertm('kg')" class="input" style="margin-left:27px;width:270px;font-size:20px;"></p>
+<p style="margin-left:24px;font-size:20px;">Gram: <input id="gm" onkeyup="convertm('gm')" class="input" style="margin-left:57px;width:270px;font-size:20px;"></p>
+<p style="margin-left:24px;font-size:20px;">Milli-gram: <input id="mg" onkeyup="convertm('mg')" class="input" style="margin-left:16px;width:270px;font-size:20px;"></p>
+<p style="margin-left:24px;font-size:20px;">Ounce: <input id="ou" onkeyup="convertm('ou')" class="input" style="margin-left:51px;width:270px;font-size:20px;"></p>
+<p style="margin-left:24px;font-size:20px;">Pound: <input id="po" onkeyup="convertm('po')" class="input" style="margin-left:52px;width:270px;font-size:20px;"></p>
+<p style="margin-left:24px;font-size:20px;">Quintal: <input id="qu" onkeyup="convertm('qu')" class="input" style="margin-left:44px;width:270px;font-size:20px;"></p>
+<p style="margin-left:24px;font-size:20px;">Metric-tonne: <input id="to" onkeyup="convertm('to')" class="input" style="margin-left:0px;width:270px;font-size:20px;"></p>
+<br>
+<button style="margin-left:244px;font-size:22px;width:160px;text-align:center;" onclick="clearm()">Clear All</button>
+<br>
+</div>
+<div id="div66" style="display:none;">
+<h1 style="font-size:50px;margin-top:15px;text-align:center;">Time Converter</h1>
+<button style="margin-left:24px;font-size:22px;width:100px;text-align:center;" onclick="back6()"><i>< </i>Back</button><br><br>
+<p  style="margin-left:24px;font-size:20px;">Second: <input id="se" onkeyup="convertti('se')" class="input" style="margin-left:12px;width:295px;font-size:20px;"></p>
+<p style="margin-left:24px;font-size:20px;">Minute: <input id="min" onkeyup="convertti('min')" class="input" style="margin-left:13px;width:295px;font-size:20px;"></p>
+<p style="margin-left:24px;font-size:20px;">Hour: <input id="ho" onkeyup="convertti('ho')" class="input" style="margin-left:30px;width:295px;font-size:20px;"></p>
+<p style="margin-left:24px;font-size:20px;">Day: <input id="da" onkeyup="convertti('da')" class="input" style="margin-left:38px;width:295px;font-size:20px;"></p>
+<p style="margin-left:24px;font-size:20px;">Year: <input id="ye" onkeyup="convertti('ye')" class="input" style="margin-left:35px;width:295px;font-size:20px;"></p>
+<p style="margin-left:24px;font-size:20px;">Decade: <input id="de" onkeyup="convertti('de')" class="input" style="margin-left:12px;width:295px;font-size:20px;"></p>
+<p style="margin-left:24px;font-size:20px;">Century: <input id="ce" onkeyup="convertti('ce')" class="input" style="margin-left:9px;width:295px;font-size:20px;"></p>
+<fieldset style="border:4px double;margin-left:20px;width:350px;font-size:18px;">
+<pre style="margin-top:2px;">      Hour:       Minute:  Second:</pre>
+<table style="margin-top:-17px;">
+<tr height="40px">
+<td width="156px" style="border:2px solid;text-align:center;font-size:20px;" bgcolor="white" id="hour">00</td>
+<td  width="82px"  style="border:2px solid;text-align:center;font-size:20px;" bgcolor="white" id="minute">00</td>
+<td  width="82px"  style="border:2px solid;text-align:center;font-size:20px;" bgcolor="white" id="second">00</td>
+</tr>
+</table>
+</fieldset><br>
+<button style="margin-left:244px;font-size:22px;width:160px;text-align:center;" onclick="clearti()">Clear All</button>
+<br>
+</div>
+<br><br>
+</div>
+<br><br><br><br><br>
+<div style="background-image:url('wood.jpg');width:500px;height:600px;border:3px solid;margin-left:30px;border-radius:5%;">
+<div id="ticview">
+<br>
+<h1 style="font-size:50px;margin-left:10px;margin-top:15px;text-align:center;">Tic-Tac-Toe</h1>
+<button style="background-image:url('wood4.jpg');height:200px;width:450px;margin-left:25px;" onclick="ticgame()">
+<table height="100" width="140" style="margin-left:40px;margin-top:3px;">
+<tr>
+<td style="border-right:white 5px solid;border-bottom:white 5px solid;height:50;width:50;"></td>
+<td style="border-left:white 5px solid;border-right:white 5px solid;border-bottom:white 5px solid;height:50;width:50;"></td>
+<td style="border-left:white 5px solid;border-bottom:white 5px solid;height:50;width:50;"></td>
+</tr>
+<tr>
+<td style="border:white 5px solid;border-left:none;height:50;width:50;"></td>
+<td style="border:white 5px solid;height:50;width:50;"></td>
+<td style="border:white 5px solid;border-right:none;height:50;width:50;"></td>
+</tr>
+<tr>
+<td style="border:white 5px solid;border-left:none;border-bottom:none;height:50;width:50;"></td>
+<td style="border:white 5px solid;border-bottom:none;height:50;width:50;"></td>
+<td style="border:white 5px solid;border-right:none;border-bottom:none;height:50;width:50;"></td>
+</tr>
+</table><p style="font-size:50px;margin-top:-110px;margin-left:180px;">Play 3×3</p></button>
+<button style="background-image:url('wood4.jpg');height:200px;width:450px;margin-left:25px;margin-top:15px;" onclick="ticgame4()">
+<table height="100" width="155" style="margin-left:35px;margin-top:3px;">
+<tr>
+<td style="border:white 5px solid;border-left:none;border-top:none;height:40;width:40;"></td>
+<td style="border:white 5px solid;border-top:none;height:40;width:40;"></td>
+<td style="border:white 5px solid;border-top:none;height:40;width:40;"></td>
+<td style="border:white 5px solid;border-top:none;border-right:none;height:40;width:40;"></td>
+</tr>
+<tr>
+<td style="border:white 5px solid;border-left:none;height:40;width:40;"></td>
+<td style="border:white 5px solid;height:40;width:40;"></td>
+<td style="border:white 5px solid;height:40;width:40;"></td>
+<td style="border:white 5px solid;border-right:none;height:40;width:40;"></td>
+</tr>
+<tr>
+<td style="border:white 5px solid;border-left:none;height:40;width:40;"></td>
+<td style="border:white 5px solid;height:40;width:40;"></td>
+<td style="border:white 5px solid;height:40;width:40;"></td>
+<td style="border:white 5px solid;border-right:none;height:40;width:40;"></td>
+</tr>
+<tr>
+<td style="border:white 5px solid;border-bottom:none;border-left:none;height:40;width:40;"></td>
+<td style="border:white 5px solid;border-bottom:none;height:40;width:40;"></td>
+<td style="border:white 5px solid;border-bottom:none;height:40;width:40;"></td>
+<td style="border:white 5px solid;border-bottom:none;border-right:none;height:40;width:40;"></td>
+</tr>
+</table><p style="font-size:50px;margin-top:-110px;margin-left:180px;">Play 4×4</p></button>
+</div>
+<div id="ticgame" style="display:none;">
+<br>
+<h1 style="font-size:50px;margin-left:10px;margin-top:15px;text-align:center;">Tic-Tac-Toe</h1>
+<div style="color:white;text-align:center;background-color:black;font-size:30px;transform:translateY(-20px);height:50px;"><p style="transform:translateY(7px);" id="gameinfo">Player X turn</p></div><br>
+<table height="300" width="300" style="margin-left:98px;margin-top:-8px;margin-bottom:35px;">
+<tr>
+<td style="border-right:white 5px solid;border-bottom:white 5px solid;"><input readonly style="height:90;width:90;background:transparent;border:none;color:white;font-size:80px;text-align:center;cursor:pointer;" id="t1" onclick="tic1();func();"></td>
+<td style="border-left:white 5px solid;border-right:white 5px solid;border-bottom:white 5px solid;"><input readonly style="height:90;width:90;background:transparent;border:none;color:white;font-size:80px;text-align:center;cursor:pointer;" id="t2" onclick="tic2();func();"></td>
+<td style="border-left:white 5px solid;border-bottom:white 5px solid;"><input readonly style="height:90;width:90;background:transparent;border:none;color:white;font-size:80px;text-align:center;cursor:pointer;" id="t3" onclick="tic3();func();"></td>
+</tr>
+<tr>
+<td style="border:white 5px solid;border-left:none;"><input readonly style="height:90;width:90;background:transparent;border:none;color:white;font-size:80px;text-align:center;cursor:pointer;" id="t4" onclick="tic4();func();"></td>
+<td style="border:white 5px solid;"><input readonly style="height:90;width:90;background:transparent;border:none;color:white;font-size:80px;text-align:center;cursor:pointer;" id="t5" onclick="tic5();func();"></td>
+<td style="border:white 5px solid;border-right:none;"><input readonly style="height:90;width:90;background:transparent;border:none;color:white;font-size:80px;text-align:center;cursor:pointer;" id="t6" onclick="tic6();func();"></td>
+</tr>
+<tr>
+<td style="border:white 5px solid;border-left:none;border-bottom:none;"><input readonly style="height:90;width:90;background:transparent;border:none;color:white;font-size:80px;text-align:center;cursor:pointer;" id="t7" onclick="tic7();func();"></td>
+<td style="border:white 5px solid;border-bottom:none;"><input readonly style="height:90;width:90;background:transparent;border:none;color:white;font-size:80px;text-align:center;cursor:pointer;" id="t8" onclick="tic8();func();"></td>
+<td style="border:white 5px solid;border-right:none;border-bottom:none;"><input readonly style="height:90;width:90;background:transparent;border:none;color:white;font-size:80px;text-align:center;cursor:pointer;" id="t9" onclick="tic9();func();"></td>
+</tr>
+</table>
+<button style="background-color:gray;font-size:20px;margin-left:91px;color:white;" onclick="tichome()">Home</button>
+<button style="background-color:#00FF00;font-size:30px;padding-left:10px;padding-right:10px;" onclick="newgame()">New Game</button>
+<button style="background-color:gray;font-size:20px;color:white;padding-left:9px;padding-right:9px;" onclick="ticstats()">Stats</button>
+</div>
+<div id="ticgame4" style="display:none;">
+<br>
+<h1 style="font-size:50px;margin-left:10px;margin-top:15px;text-align:center;">Tic-Tac-Toe</h1>
+<div style="color:white;text-align:center;background-color:black;font-size:30px;transform:translateY(-20px);height:50px;"><p style="transform:translateY(7px);" id="gameinfo4">Player X turn</p></div><br>
+<table style="margin-left:107px;margin-top:2px;margin-bottom:30px;">
+<tr>
+<td style="border:white 5px solid;border-left:none;border-top:none;"><input readonly style="height:60;width:60;background:transparent;border:none;color:white;font-size:52px;text-align:center;cursor:pointer;" id="t41" onclick="tic41();func4();"></td>
+<td style="border:white 5px solid;border-top:none;"><input readonly style="height:60;width:60;background:transparent;border:none;color:white;font-size:52px;text-align:center;cursor:pointer;" id="t42" onclick="tic42();func4();"></td>
+<td style="border:white 5px solid;border-top:none;"><input readonly style="height:60;width:60;background:transparent;border:none;color:white;font-size:52px;text-align:center;cursor:pointer;" id="t43" onclick="tic43();func4();"></td>
+<td style="border:white 5px solid;border-top:none;border-right:none;"><input readonly style="height:60;width:60;background:transparent;border:none;color:white;font-size:52px;text-align:center;cursor:pointer;" id="t44" onclick="tic44();func4();"></td>
+</tr>
+<tr>
+<td style="border:white 5px solid;border-left:none;"><input readonly style="height:60;width:60;background:transparent;border:none;color:white;font-size:52px;text-align:center;cursor:pointer;" id="t45" onclick="tic45();func4();"></td>
+<td style="border:white 5px solid;"><input readonly style="height:60;width:60;background:transparent;border:none;color:white;font-size:52px;text-align:center;cursor:pointer;" id="t46" onclick="tic46();func4();"></td>
+<td style="border:white 5px solid;"><input readonly style="height:60;width:60;background:transparent;border:none;color:white;font-size:52px;text-align:center;cursor:pointer;" id="t47" onclick="tic47();func4();"></td>
+<td style="border:white 5px solid;border-right:none;"><input readonly style="height:60;width:60;background:transparent;border:none;color:white;font-size:52px;text-align:center;cursor:pointer;" id="t48" onclick="tic48();func4();"></td>
+</tr>
+<tr>
+<td style="border:white 5px solid;border-left:none;"><input readonly style="height:60;width:60;background:transparent;border:none;color:white;font-size:52px;text-align:center;cursor:pointer;" id="t49" onclick="tic49();func4();"></td>
+<td style="border:white 5px solid;"><input readonly style="height:60;width:60;background:transparent;border:none;color:white;font-size:52px;text-align:center;cursor:pointer;" id="t410" onclick="tic410();func4();"></td>
+<td style="border:white 5px solid;"><input readonly style="height:60;width:60;background:transparent;border:none;color:white;font-size:52px;text-align:center;cursor:pointer;" id="t411" onclick="tic411();func4();"></td>
+<td style="border:white 5px solid;border-right:none;"><input readonly style="height:60;width:60;background:transparent;border:none;color:white;font-size:52px;text-align:center;cursor:pointer;" id="t412" onclick="tic412();func4();"></td>
+</tr>
+<tr>
+<td style="border:white 5px solid;border-bottom:none;border-left:none;"><input readonly style="height:60;width:60;background:transparent;border:none;color:white;font-size:52px;text-align:center;cursor:pointer;" id="t413" onclick="tic413();func4();"></td>
+<td style="border:white 5px solid;border-bottom:none;"><input readonly style="height:60;width:60;background:transparent;border:none;color:white;font-size:52px;text-align:center;cursor:pointer;" id="t414" onclick="tic414();func4();"></td>
+<td style="border:white 5px solid;border-bottom:none;"><input readonly style="height:60;width:60;background:transparent;border:none;color:white;font-size:52px;text-align:center;cursor:pointer;" id="t415" onclick="tic415();func4();"></td>
+<td style="border:white 5px solid;border-bottom:none;border-right:none;"><input readonly style="height:60;width:60;background:transparent;border:none;color:white;font-size:52px;text-align:center;cursor:pointer;" id="t416" onclick="tic416();func4();"></td>
+</tr>
+</table>
+<button style="background-color:gray;font-size:20px;margin-left:91px;color:white;margin-top:20px;" onclick="tichome4()">Home</button>
+<button style="background-color:#00FF00;font-size:30px;padding-left:10px;padding-right:10px;" onclick="newgame4()">New Game</button>
+<button style="background-color:gray;font-size:20px;color:white;padding-left:9px;padding-right:9px;" onclick="ticstats4()">Stats</button>
+</div>
+<div id="ticstats" style="display:none;"><br>
+<h1 style="font-size:50px;margin-left:10px;margin-top:15px;text-align:center;">Tic-Tac-Toe 3×3 Stats</h1>
+<p id="ticstats2" style="font-size:40px;margin-left:40px;"></p>
+<button onclick="backtic()" style="color:white;background-color:red;font-size:30px;margin-left:380px;">Close</button>
+</div>
+<div id="ticstats4" style="display:none;"><br>
+<h1 style="font-size:50px;margin-left:10px;margin-top:15px;text-align:center;">Tic-Tac-Toe 4×4 Stats</h1>
+<p id="ticstats42" style="font-size:40px;margin-left:40px;"></p>
+<button onclick="backtic4()" style="color:white;background-color:red;font-size:30px;margin-left:380px;">Close</button>
+</div>
+</div>
+<br><br><br><br><br>
+<div style="background-color:#949494;width:428px;border:5px double;margin-left:30px;">
+<h1 style="font-size:50px;margin-left:10px;margin-top:15px;text-align:center;">Timer</h1>
+<div style="background-color:white;height:70px;">
+<h3 style="margin-left:20px;">Current Date and Time:</h3>
+<p id="demo1000" style="margin-left:20px;font-size:20px;"></p></div>
+<div style="background-color:white;height:78px;">
+<h3 style="margin-left:20px;">Set Timer:</h3>
+<input type="date" id="datetime" style="margin-left:20px;font-size:20px;background-color:#ececec;">
+<input type="time" id="datetime2" style="font-size:18px;background-color:#ececec;">
+<input type="button" value="Choose" onclick="datetime()" style="font-size:20px;background-color:green;color:white;"></div>
+<div style="background-color:white;height:70px;">
+<h3 style="margin-left:20px;">Choosen Date and Time:</h3>
+<p id="demo10" style="font-size:20px;margin-left:20px;">None</p>
+</div>
+<div style="background-color:white;height:70px;display:none;" id="remaining">
+<h3 style="margin-left:20px;">Time Remaining:</h3>
+<p id="demo100"  style="font-size:20px;margin-left:20px;"></p></div><br>
+<button onclick="resettime()" style="margin-left:337px;font-size:20px;background-color:red;color:white;">Reset</button>
+<br><br>
+</div>
+<br><br><br><br><br>
+<div style="background-color:#949494;width:428px;border:5px double;margin-left:30px;">
+<h1 style="font-size:50px;margin-left:10px;margin-top:15px;text-align:center;">Age Calculator</h1>
+<div style="background-color:white;height:78px;">
+<h3 style="margin-left:20px;">Choose your date of birth:</h3>
+<input type="date" id="dateage" onchange="dateage()" style="margin-left:20px;font-size:20px;background-color:#ececec;">
+</div>
+<div style="background-color:white;height:70px;">
+<h3 style="margin-left:20px;">Choosen birth date:</h3>
+<p id="choosenage" style="font-size:20px;margin-left:20px;">Choose DOB to calculate age</p>
+</div>
+<div style="background-color:white;height:70px;display:none;" id="todayagee">
+<h3 style="margin-left:20px;">Today's date:</h3>
+<p id="demo99" style="font-size:20px;margin-left:20px;"></p>
+</div>
+<div id="agedada3" style="background-color:white;height:70px;display:none;">
+<h3 style="margin-left:20px;">Age:</h3>
+<p id="agedada" style="font-size:20px;margin-left:20px;">Choose DOB first</p>
+</div>
+<div id="agedada4" style="background-color:white;height:70px;display:none;">
+<h3 style="margin-left:20px;">Birthday: 🎂🎉🥳🎈🎁</h3>
+<p id="agedada2" style="font-size:20px;margin-left:20px;">Choose DOB first</p>
+</div>
+<br>
+<button onclick="cleanage()" style="background-color:red;color:white;font-size:20px;margin-left:337px;">Reset</button>
+<br><br>
+</div>
+<br><br><br><br><br>
+<div style="background-image:url('wood2.jpg');width:428px;height:464px;border:3px solid;margin-left:30px;border-radius:5%;">
+<p style="text-align:center;font-size:12px;font-weight:bold;">CALCULATOR</p>
+<p style="margin-left:395px;transform:translateY(-20px);font-size:9px;position:absolute;"><span style="background-color:black;padding-left:3px;padding-right:3px;color:#d4d4d4;" id="degrad">Rad</span></p>
+<p style="margin-left:360px;transform:translateY(-20px);font-size:9px;position:absolute;"><span style="background-color:black;padding-left:3px;padding-right:3px;color:#d4d4d4;" id="con">MATH</span></p>
+<div style="display:none;margin-bottom:-187px;" id="base">
+<p style="margin-left:50px;font-size:18px;">First value:</p>
+<p style="margin-left:276px;font-size:18px;transform:translateY(-39px);">Second value: </p>
+<p style="margin-left:182px;font-size:18px;transform:translateY(-79px);">Operator: </p>
+<input id="fir" onclick="fir()" size=16 style="color:white;margin-left:10px;border:double 3px white;font-size:16px;transform:translateY(-94px);background-color:black;">
+<input id="op" onclick="op()" size=1 maxlength=1 style="text-align:center;color:white;margin-left:0px;border:double 3px white;font-size:16px;transform:translateY(-94px);background-color:black;">
+<input id="sec" onclick="sec()" size=16 style="color:white;margin-left:245px;border:double 3px white;font-size:16px;transform:translateY(-120px);background-color:black;">
+</div>
+<input type="text" id="disp" style="display:block;height:60px;width:408px;margin-left:10px;font-size:20px;background-color:black;color:white;border:solid white 1px;position:absolute;" placeholder="0" >
+<table style="margin-left:8px;margin-top:69px;">
+<tr><td style="height:40px;width:404px;font-size:25px;background-color:black;color:white;border:solid white 1px;text-align:right;padding-top:2px;" id="dispans"></td></tr>
+</table>
+<br>
+<input type="button" id="com1" value="(" onclick="diss('(')" style="font-size:20px;padding-left:32px;padding-right:32px;margin-left:10px;border-radius:15%;background-color:#2b2d2f;color:white;">
+<input type="button" id="com2" value=")" onclick="diss(')')" style="font-size:20px;padding-left:32px;padding-right:32px;margin-left:4px;border-radius:15%;background-color:#2b2d2f;color:white;">
+<input type="button" value="sin" id="sin" onclick="sine()" style="font-size:20px;padding-left:23px;padding-right:23px;margin-left:4px;border-radius:15%;background-color:#2b2d2f;color:white;">
+<input type="button" value="cos" id="cos" onclick="cose()" style="font-size:20px;padding-left:21px;padding-right:20px;margin-left:4px;border-radius:15%;background-color:#2b2d2f;color:white;">
+<input type="button" value="tan" id="tan" onclick="tane()" style="font-size:20px;padding-left:22px;padding-right:21px;margin-left:4px;border-radius:15%;background-color:#2b2d2f;color:white;"><br>
+<input type="button" value="log" id="log" onclick="log()" style="font-size:20px;padding-left:22px;padding-right:22px;margin-left:10px;border-radius:15%;margin-top:7px;background-color:#2b2d2f;color:white;">
+<input type="button" value="ln" id="ln" onclick="ln()" style="font-size:20px;padding-left:28px;padding-right:28px;margin-left:4px;border-radius:15%;background-color:#2b2d2f;color:white;">
+<button onclick="sinei()" id="sini" style="font-size:15.2px;padding-left:20px;padding-right:20px;margin-left:4px;border-radius:15%;background-color:#2b2d2f;color:white;">sin<sup>-1</sup></button>
+<button onclick="cosei()" id="cosi" style="font-size:15.2px;padding-left:19px;padding-right:19px;margin-left:4px;border-radius:15%;background-color:#2b2d2f;color:white;">cos<sup>-1</sup></button>
+<button onclick="tanei()" id="tani" style="font-size:15.2px;padding-left:19px;padding-right:19px;margin-left:4px;border-radius:15%;background-color:#2b2d2f;color:white;">tan<sup>-1</sup></button>
+<div id="div4" style="display:none;">
+<input type="button" value="A" onclick="disph('A')" id="a" style="font-size:20px;padding-left:21px;padding-right:21px;margin-left:10px;border-radius:15%;margin-top:8px;background-color:#ff6600;color:white;">
+<input type="button"  value="B" onclick="disph('B')" id="b" style="font-size:20px;padding-left:21px;padding-right:21px;margin-left:6px;border-radius:15%;background-color:#ff6600;color:white;">
+<input type="button" value="C" id="c" onclick="disph('C')" style="font-size:20px;padding-left:21px;padding-right:21px;margin-left:6px;border-radius:15%;background-color:#ff6600;color:white;">
+<input type="button" value="D" id="d" onclick="disph('D')" style="font-size:20px;padding-left:21px;padding-right:21px;margin-left:7px;background-color:#ff6600;color:white;border-radius:15%;">
+<input type="button" value="E" id="e" onclick="disph('E')" style="font-size:20px;padding-left:21px;padding-right:21px;margin-left:6px;background-color:#ff6600;color:white;border-radius:15%;">
+<input type="button" value="F" id="f" onclick="disph('F')" style="font-size:20px;padding-left:21px;padding-right:21px;margin-left:6px;background-color:#ff6600;color:white;border-radius:15%;"><br>
+</div>
+<div id="div3">
+<input type="button" value="√" onclick="sqr()" id="sqr" style="font-size:16.5px;padding-left:31px;padding-top:5px;padding-right:31px;margin-left:10px;border-radius:15%;margin-top:6px;background-color:#2b2d2f;color:white;">
+<button onclick="tenpow()" id="tenpow" style="font-size:15.2px;padding-left:17px;padding-right:17px;margin-left:4px;border-radius:15%;margin-top:6px;background-color:#2b2d2f;color:white;">×10<sup>☐</sup></button>
+<input type="button" value="^" id="pow" onclick="pow()" style="font-size:20px;padding-left:30px;padding-right:31px;margin-left:5px;border-radius:15%;background-color:#2b2d2f;color:white;" title="power(constant , power of constant)">
+<input type="button" value="," id="comma" onclick="diss(',')" style="font-size:20px;padding-left:34px;padding-right:34px;margin-left:4px;background-color:#2b2d2f;color:white;border-radius:15%;">
+<input type="button" value="e" id="exp" onclick="exp()" style="font-size:20px;padding-left:29px;padding-right:29px;margin-left:4px;background-color:#2b2d2f;color:white;border-radius:15%;"><br>
+</div>
+<div id="div1">
+<input type="button" value="Deci" onclick="decic()" style="font-size:15px;padding-left:20px;padding-right:21px;margin-left:10px;border-radius:15%;background-color:#013220;color:white;margin-top:8px;">
+<input type="button" value="Bin" onclick="binc()" style="font-size:15px;padding-left:25px;padding-right:25px;margin-left:4px;border-radius:15%;background-color:#013220;color:white;">
+<input type="button" value="Oct" onclick="octc()" style="font-size:15px;padding-left:25px;padding-right:25px;margin-left:4px;border-radius:15%;background-color:#013220;color:white;">
+<input type="button" value="Hex" onclick="hexc()" style="font-size:15px;padding-left:22px;padding-right:21px;margin-left:4px;border-radius:15%;background-color:#013220;color:white;">
+<button onclick="set()" style="font-size:13px;padding-left:25px;padding-right:25px;margin-left:6px;border-radius:15%;background-color:#013220;color:white;">⚙️</button><br>
+</div>
+<div id="div2" style="display:none;">
+<input type="button" id="decicc" value="Deci" onclick="decicc()" style="font-size:15px;padding-left:20px;padding-right:21px;margin-left:10px;border-radius:15%;background-color:#00ff00;color:white;margin-top:8px;">
+<input type="button" id="bincc" value="Bin" onclick="bincc()" style="font-size:15px;padding-left:25px;padding-right:25px;margin-left:4px;border-radius:15%;background-color:#013220;color:white;">
+<input type="button" id="octcc" value="Oct" onclick="octcc()" style="font-size:15px;padding-left:25px;padding-right:25px;margin-left:4px;border-radius:15%;background-color:#013220;color:white;">
+<input type="button" id="hexcc" value="Hex" onclick="hexcc()" style="font-size:15px;padding-left:22px;padding-right:21px;margin-left:4px;border-radius:15%;background-color:#013220;color:white;">
+<button onclick="set()" style="font-size:13px;padding-left:25px;padding-right:25px;margin-left:6px;border-radius:15%;background-color:#013220;color:white;">⚙️</button><br>
+</div>
+<input type="button" id="sev" value="7" onclick="dis('7')" style="font-size:20px;padding-left:30px;padding-right:30px;margin-left:10px;border-radius:15%;margin-top:15px;">
+<input type="button" id="eig" value="8" onclick="dis('8')" style="font-size:20px;padding-left:30px;padding-right:30px;margin-left:4px;border-radius:15%;">
+<input type="button" id="nin" value="9" onclick="dis('9')" style="font-size:20px;padding-left:30px;padding-right:30px;margin-left:4px;border-radius:15%;">
+<input type="button" value="DEL" onclick="del()" style="font-size:20px;padding-left:17px;padding-right:16px;margin-left:4px;background-color:red;border-radius:15%;">
+<input type="button" value="AC" onclick="clearok()" style="font-size:20px;padding-left:21px;padding-right:22px;margin-left:4px;background-color:red;border-radius:15%;"><br>
+<input type="button" id="fou" value="4" onclick="dis('4')" style="font-size:20px;padding-left:30px;padding-right:30px;margin-left:10px;border-radius:15%;margin-top:6px;">
+<input type="button" id="fiv" value="5" onclick="dis('5')" style="font-size:20px;padding-left:30px;padding-right:30px;margin-left:4px;border-radius:15%;">
+<input type="button" id="six" value="6" onclick="dis('6')" style="font-size:20px;padding-left:30px;padding-right:30px;margin-left:4px;border-radius:15%;">
+<input type="button" value="×" onclick="diss('*')" style="font-size:20px;padding-left:30px;padding-right:30px;margin-left:4px;background-color:#ff6600;border-radius:15%;">
+<input type="button" value="÷" onclick="diss('/')" style="font-size:20px;padding-left:30px;padding-right:30px;margin-left:4px;background-color:#ff6600;border-radius:15%;"><br>
+<input type="button" value="1" onclick="dis('1')" style="font-size:20px;padding-left:30px;padding-right:30px;margin-left:10px;border-radius:15%;margin-top:6px;">
+<input type="button" id="two" value="2" onclick="dis('2')" style="font-size:20px;padding-left:30px;padding-right:30px;margin-left:4px;border-radius:15%;">
+<input type="button" id="thr" value="3" onclick="dis('3')" style="font-size:20px;padding-left:30px;padding-right:30px;margin-left:4px;border-radius:15%;">
+<input type="button" value="+" onclick="diss('+')" style="font-size:20px;padding-left:30px;padding-right:30px;margin-left:4px;background-color:#ff6600;border-radius:15%;">
+<input type="button" value="-" onclick="diss('-')" style="font-size:20px;padding-left:32px;padding-right:32px;margin-left:4px;background-color:#ff6600;border-radius:15%;"><br>
+<input type="button" value="0" onclick="dis('0')" style="font-size:20px;padding-left:30px;padding-right:30px;margin-left:10px;border-radius:15%;margin-top:6px;">
+<input type="button" id="point" value="." onclick="diss('.')" style="font-size:20px;padding-left:32.5px;padding-right:32.5px;margin-left:4px;border-radius:15%;">
+<input type="button" value="π" id="pie" onclick="pie()" style="font-size:20px;padding-left:28px;padding-right:29px;margin-left:4px;border-radius:15%;">
+<input type="button" value="Ans" onclick="ans()" style="font-size:20px;padding-left:19px;padding-right:19px;margin-left:4px;background-color:#ff6600;border-radius:15%;">
+<input type="button" value="=" onclick="calc()" style="font-size:20px;padding-left:30px;padding-right:30px;margin-left:4px;background-color:#013220;color:white;border-radius:15%;">
+</div>
+<div style="background-image:url('wood2.jpg');width:428px;height:464px;border:3px solid;margin-left:500px;border-radius:5%;transform:translateY(-466px);display:none;position:absolute;" id="setting">
+<h1 style="font-size:40px;margin-left:10px;margin-top:15px;text-align:center;">Calculator Settings</h1>
+<fieldset style="border:double 3px black;margin-left:10px;margin-right:10px;"><legend>Rad/Deg</legend>
+<button onclick="rad()" id="rad" style="margin-left:10px;font-size:20px;background-color:#00FF00;">Radian</button>
+<button onclick="deg()" id="deg" style="margin-left:10px;font-size:20px;background-color:white;">Degree</button>
+</fieldset>
+<br>
+<fieldset style="border:double 3px black;margin-left:10px;margin-right:10px;"><legend>Mode</legend>
+<button onclick="math()" id="math" style="margin-left:10px;font-size:20px;background-color:#00FF00;">Math</button>
+<button onclick="basen()" id="basen" style="margin-left:10px;font-size:20px;background-color:white;">Base-N</button>
+</fieldset>
+<br>
+<fieldset style="border:double 3px black;margin-left:10px;margin-right:10px;"><legend>Decimal place</legend>
+<button onclick="def()" id="def" style="margin-left:10px;font-size:20px;background-color:#00FF00;" title="Applicable only in MATH mode">Default</button>
+<button onclick="zero()" id="zero" style="margin-left:10px;font-size:20px;background-color:white;" title="Applicable only in MATH mode">0</button>
+<button onclick="one()" id="one" style="margin-left:10px;font-size:20px;background-color:white;" title="Applicable only in MATH mode">1</button>
+<button onclick="twoo()" id="twoo" style="margin-left:10px;font-size:20px;background-color:white;" title="Applicable only in MATH mode">2</button>
+<button onclick="three()" id="three" style="margin-left:10px;font-size:20px;background-color:white;" title="Applicable only in MATH mode">3</button>
+<button onclick="four()" id="four" style="margin-left:10px;font-size:20px;background-color:white;" title="Applicable only in MATH mode">5</button>
+<button onclick="five()" id="five" style="margin-left:10px;font-size:20px;background-color:white;" title="Applicable only in MATH mode">10</button>
+</fieldset>
+<br>
+<button onclick="closedd()" style="margin-left:345px;font-size:20px;color:white;background-color:red;">Close</button>
+</div>
+<br><br><br><br><br>
+<div style="background-color:#949494;width:800px;border:5px double;margin-left:30px;">
+<div id="form1">
+<p style="font-size:60px;margin-bottom:20px;margin-top:20px;margin-left:20px;">Registration Form</p>
+<button onclick="formfill()" style="font-size:22px;margin-left:510px;margin-top:-70px;padding-left:40px;padding-right:40px;">Fill</button>
+<button onclick="formreview()" style="font-size:22px;margin-left:638px;margin-top:-70px;padding-left:5px;padding-right:5px;">Saved Form</button>
+</div>
+<div style="display:none;" id="form100"><br>
+<p style="font-size:60px;margin-bottom:20px;margin-top:20px;margin-left:20px;">Saved Registration Form</p><br>
+<button onclick="formreviewback()" style="font-size:22px;margin-left:20px;padding-left:10px;padding-right:10px;"><i>< </i>Back</button>
+<button onclick="formreviewdown()" style="font-size:22px;margin-left:455px;padding-left:10px;padding-right:10px;background-color:blue;color:white;">Download</button>
+<button onclick="formreviewclear()" style="font-size:22px;margin-left:5px;padding-left:10px;padding-right:10px;background-color:red;color:white;">Clear</button>
+<br><br>
+<p id="formdata" style="font-size:20px;margin-left:30px;">You havent filled out the form yet!</p>
+<br><br>
+</div>
+<div style="display:none;" id="form2">
+<form action="sentmail.php" method="post" onsubmit="return false">
+<br><br><br>
+<p style="text-align:center;font-size:60px;margin-bottom:-30px;margin-top:-15px;">Registration Form</p>
+<br><br><br>
+<button onclick="formfillback()" style="font-size:22px;margin-left:20px;padding-left:10px;padding-right:10px;"><i>< </i>Back</button>
+<button type="reset" style="font-size:22px;margin-left:615px;padding-left:12px;padding-right:10px;" title="Reload">⟳</button><br><br>
+<fieldset style="margin-left:20px;margin-right:20px;border:black double 3px;">
+<legend>Personal infomation</legend>
+<br><br>
+Name:<input name="name" type="text" maxlength=50 size=20 id="formname" required style="margin-left:10px;"><br><br>
+Address:<input name="address" type="text" maxlength=50 size=20 id="formaddress" required style="margin-left:10px;"><br><br>
+<label for="formdob">DOB:</label>
+<input type="date" id="formdob" required onchange="formdateage()" style="margin-left:10px;"><br><br>
+Age:<input name="age" size=6 id="formage" readonly title="Enter DOB, age will be calculated automatically" style="margin-left:10px;"><br><br>
+Phone no.:<input type="tel" placeholder="1234-567-890" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}" id="formphone" required style="margin-left:10px;"><br><br>
+Gender: <input type="radio" checked name="r" style="accent-color:black;" onclick="formgenderr()" id="g1">male   <input type="radio" name="r" style="accent-color:black;" onclick="formgenderr2()" id="g2">female   <input type="radio" name="r" style="accent-color:black;" onclick="formgenderr3()" id="g3">none<br><br>
+Nationality:<select id="formnation" style="margin-left:10px;" onchange="formnationchange()">
+            <option value='User didnt select any nationality'>Select</option>
+            <option value='Nepalese'>Nepalese</option>
+			<option value='Indian'>Indian</option>
+			<option value='Others'>Others</option>
+            </select><br><br>
+Languages: <input type="checkbox" checked style="accent-color:green;" value="Nepali" id="formlang">Nepali
+<input type="checkbox" style="accent-color:green;" value="English" id="formlang2">English
+<input type="checkbox"  style="accent-color:green;" value="Others" id="formlang3">Others<br><br>
+Hobby:<select size=1 style="margin-left:10px;" id="formhobby" onchange="formhobbychange()">
+      <option value="User didnt select any hobbies">Select</option>
+      <optgroup label="good boy"> 
+	  <option value="reading">reading</option>
+	  <option value="writing">writing</option>
+	  <option value="playing">playing</option>
+	  <option value="cycling">cycling</option>
+	  <option value="walking">walking</option>
+	  </optgroup>
+      <optgroup label="harami boy"> 
+	  <option value="sleeping">sleeping</option>
+	  <option value="fighting">fighting</option>
+	  <option value="playing video games">playing video games</option>
+	  <option value="eating">eating</option>
+	  <option value="bullying">bullying</option>
+	  </optgroup>
+	  <optgroup label="Others">
+	  <option value="None of the given">None of the above</option>
+	  <option value="I wont say">I won't say🤣</option>
+	  </optgroup>
+	  </select><br><br>
+Occupation:<input style="margin-left:10px;" type="text" maxlength=50 size=20 id="formoccu" required><br><br>
+Maritial status: <input type="radio" name="aha" style="accent-color:black;" onclick="formmari()" id="m11">Married    <input type="radio" name="aha" checked style="accent-color:black;" onclick="formmari2()" id="m22">Unmarried <br><br>
+Email ID:<input name="email" style="margin-left:10px;" type="email" placeholder="abc@gmail.com" id="formemail" required><br><br>
+Password:<input style="margin-left:10px;" type="password" id="formpass" required><br><br>
+Comments:<br><textarea name="message" rows=3 cols=50 placeholder="Type here" maxlength=200 id="formtext"></textarea><br><br>
+Attach photo:<br><input type="file" accept="image/*" id="formimage" required><br><br>
+</fieldset>
+<br><br>
+<fieldset style="margin-left:20px;margin-right:20px;border:black double 3px;">
+<legend>Education and Qualification</legend>
+<br><br>
+Education Status:<br>
+<table style="border:black solid 1px;background-color:#dedede;">
+<tr style="border:black solid 1px;">
+<td width=60 style="border:black solid 1px;">S.N.</td>
+<td  width=180 style="border:black solid 1px;">Level</td>
+<td  width=80 style="border:black solid 1px;">Grade</td>
+</tr>
+<tr style="border:black solid 1px;">
+<td  width=60 style="border:black solid 1px;">1</td>
+<td  width=180 style="border:black solid 1px;">SEE</td>
+<td  width=80 style="border:black solid 1px;">
+<select style="background-color:#dedede;" id="formedu" onchange="formeduchange()">
+<option value="User didnt select grade">select</option>
+<option value="A+">A+</option>
+<option value="A">A</option>
+<option value="B+">B+</option>
+<option value="B">B</option>
+<option value="C+">C+</option>
+<option value="C">C</option>
+<option value="D">D</option>
+<option value="F">F</option>
+<option value="Not given">Not given</option>
+</select>
+</td>
+</tr>
+<tr style="border:black solid 1px;">
+<td  width=60 style="border:black solid 1px;">2</td>
+<td  width=180 style="border:black solid 1px;">+2</td>
+<td  width=80 style="border:black solid 1px;">
+<select  style="background-color:#dedede;" id="formedu2" onchange="formedu2change()">
+<option value="User didnt select grade">select</option>
+<option value="A+">A+</option>
+<option value="A">A</option>
+<option value="B+">B+</option>
+<option value="B">B</option>
+<option value="C+">C+</option>
+<option value="C">C</option>
+<option value="D">D</option>
+<option value="F">F</option>
+<option value="Not given">Not given</option>
+</select>
+</td>
+</tr>
+<tr style="border:black solid 1px;">
+<td  width=60 style="border:black solid 1px;">3</td>
+<td  width=180 style="border:black solid 1px;">Bachelor</td>
+<td  width=80 style="border:black solid 1px;">
+<select  style="background-color:#dedede;" id="formedu3" onchange="formedu3change()">
+<option value="User didnt select grade">select</option>
+<option value="A+">A+</option>
+<option value="A">A</option>
+<option value="B+">B+</option>
+<option value="B">B</option>
+<option value="C+">C+</option>
+<option value="C">C</option>
+<option value="D">D</option>
+<option value="F">F</option>
+<option value="Not given">Not given</option>
+</select>
+</td>
+</tr>
+</table>
+<br><br>
+Ability and Achievements:<br><textarea rows=3 cols=50 placeholder="Type here" maxlength=300 required id="formability"></textarea><br><br>
+</fieldset>
+<p style="color:white;"><? echo $success; ?></p>
+<p style="color:white;"><? echo $fail; ?></p>
+<br><br>
+<button type="reset" style="margin-left:625px;font-size:20px;background-color:red;color:white;">Reset</button>
+<button type="submit" name="submit" onclick="formsubmit()" style="font-size:20px;background-color:green;color:white;margin-left:6px;">Submit</button>
+<br><br>
+</form>
+</div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+
+

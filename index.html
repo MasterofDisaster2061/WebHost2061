@@ -447,23 +447,23 @@
 <fieldset style="margin-left:20px;margin-right:20px;border:black double 3px;">
 <legend>Personal infomation</legend>
 <br><br>
-Name:<input name="name" type="text" maxlength=50 size=20 id="formname" required style="margin-left:10px;"><br><br>
-Address:<input name="address" type="text" maxlength=50 size=20 id="formaddress" required style="margin-left:10px;"><br><br>
+Name:<input name="Name" type="text" maxlength=50 size=20 id="formname" required style="margin-left:10px;"><br><br>
+Address:<input name="address" type="text" maxlength=50 size=20 id="formaddress" required style="margin-left:10px;" name="Address"><br><br>
 <label for="formdob">DOB:</label>
-<input type="date" id="formdob" required onchange="formdateage()" style="margin-left:10px;"><br><br>
-Age:<input name="age" size=6 id="formage" readonly title="Enter DOB, age will be calculated automatically" style="margin-left:10px;"><br><br>
-Phone no.:<input type="tel" placeholder="1234-567-890" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}" id="formphone" required style="margin-left:10px;"><br><br>
-Gender: <input type="radio" checked name="r" style="accent-color:black;" onclick="formgenderr()" id="g1">male   <input type="radio" name="r" style="accent-color:black;" onclick="formgenderr2()" id="g2">female   <input type="radio" name="r" style="accent-color:black;" onclick="formgenderr3()" id="g3">none<br><br>
-Nationality:<select id="formnation" style="margin-left:10px;" onchange="formnationchange()">
+<input type="date" id="formdob" required onchange="formdateage()" style="margin-left:10px;" name="DOB"><br><br>
+Age:<input name="Age" size=6 id="formage" readonly title="Enter DOB, age will be calculated automatically" style="margin-left:10px;"><br><br>
+Phone no.:<input type="tel" placeholder="1234-567-890" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}" id="formphone" required style="margin-left:10px;" name="Contact number"><br><br>
+Gender: <input type="radio" checked  style="accent-color:black;" onclick="formgenderr()" id="g1" name="Gender">male   <input type="radio" style="accent-color:black;" onclick="formgenderr2()" id="g2" name="Gender">female   <input type="radio" style="accent-color:black;" onclick="formgenderr3()" id="g3" name="Gender">none<br><br>
+Nationality:<select id="formnation" style="margin-left:10px;" onchange="formnationchange()" name="Nationality">
             <option value='User didnt select any nationality'>Select</option>
             <option value='Nepalese'>Nepalese</option>
 			<option value='Indian'>Indian</option>
 			<option value='Others'>Others</option>
             </select><br><br>
-Languages: <input type="checkbox" checked style="accent-color:green;" value="Nepali" id="formlang">Nepali
-<input type="checkbox" style="accent-color:green;" value="English" id="formlang2">English
-<input type="checkbox"  style="accent-color:green;" value="Others" id="formlang3">Others<br><br>
-Hobby:<select size=1 style="margin-left:10px;" id="formhobby" onchange="formhobbychange()">
+Languages: <input type="checkbox" checked style="accent-color:green;" id="formlang" name="Languages">Nepali
+<input type="checkbox" style="accent-color:green;" value="English" id="formlang2" name="Languages">English
+<input type="checkbox"  style="accent-color:green;" value="Others" id="formlang3" name="Languages">Others<br><br>
+Hobby:<select size=1 style="margin-left:10px;" id="formhobby" onchange="formhobbychange()" name="Hobby">
       <option value="User didnt select any hobbies">Select</option>
       <optgroup label="good boy"> 
 	  <option value="reading">reading</option>
@@ -484,12 +484,12 @@ Hobby:<select size=1 style="margin-left:10px;" id="formhobby" onchange="formhobb
 	  <option value="I wont say">I won't say🤣</option>
 	  </optgroup>
 	  </select><br><br>
-Occupation:<input style="margin-left:10px;" type="text" maxlength=50 size=20 id="formoccu" required><br><br>
-Maritial status: <input type="radio" name="aha" style="accent-color:black;" onclick="formmari()" id="m11">Married    <input type="radio" name="aha" checked style="accent-color:black;" onclick="formmari2()" id="m22">Unmarried <br><br>
-Email ID:<input name="email" style="margin-left:10px;" type="email" placeholder="abc@gmail.com" id="formemail" required><br><br>
+Occupation:<input style="margin-left:10px;" type="text" maxlength=50 size=20 id="formoccu" name="Occupation" required><br><br>
+Maritial status: <input type="radio" name="Maritial status" style="accent-color:black;" onclick="formmari()" id="m11">Married    <input type="radio" name="Maritial status" checked style="accent-color:black;" onclick="formmari2()" id="m22">Unmarried <br><br>
+Email ID:<input name="Email" style="margin-left:10px;" type="email" placeholder="abc@gmail.com" id="formemail" required><br><br>
 Password:<input style="margin-left:10px;" type="password" id="formpass" required><br><br>
-Comments:<br><textarea name="message" rows=3 cols=50 placeholder="Type here" maxlength=200 id="formtext"></textarea><br><br>
-Attach photo:<br><input type="file" accept="image/*" id="formimage" required><br><br>
+Comments:<br><textarea name="Comments" rows=3 cols=50 placeholder="Type here" maxlength=200 id="formtext"></textarea><br><br>
+Attach photo:<br><input type="file" accept="image/*" id="formimage" required name="Profile photo"><br><br>
 </fieldset>
 <br><br>
 <fieldset style="margin-left:20px;margin-right:20px;border:black double 3px;">
@@ -506,7 +506,7 @@ Education Status:<br>
 <td  width=60 style="border:black solid 1px;">1</td>
 <td  width=180 style="border:black solid 1px;">SEE</td>
 <td  width=80 style="border:black solid 1px;">
-<select style="background-color:#dedede;" id="formedu" onchange="formeduchange()">
+<select style="background-color:#dedede;" id="formedu" onchange="formeduchange()" name="SEE grade">
 <option value="User didnt select grade">select</option>
 <option value="A+">A+</option>
 <option value="A">A</option>
@@ -524,7 +524,7 @@ Education Status:<br>
 <td  width=60 style="border:black solid 1px;">2</td>
 <td  width=180 style="border:black solid 1px;">+2</td>
 <td  width=80 style="border:black solid 1px;">
-<select  style="background-color:#dedede;" id="formedu2" onchange="formedu2change()">
+<select  style="background-color:#dedede;" id="formedu2" onchange="formedu2change()" name="+2 grade">
 <option value="User didnt select grade">select</option>
 <option value="A+">A+</option>
 <option value="A">A</option>
@@ -542,7 +542,7 @@ Education Status:<br>
 <td  width=60 style="border:black solid 1px;">3</td>
 <td  width=180 style="border:black solid 1px;">Bachelor</td>
 <td  width=80 style="border:black solid 1px;">
-<select  style="background-color:#dedede;" id="formedu3" onchange="formedu3change()">
+<select  style="background-color:#dedede;" id="formedu3" onchange="formedu3change()" name="Bachelor grade">
 <option value="User didnt select grade">select</option>
 <option value="A+">A+</option>
 <option value="A">A</option>
@@ -558,7 +558,7 @@ Education Status:<br>
 </tr>
 </table>
 <br><br>
-Ability and Achievements:<br><textarea rows=3 cols=50 placeholder="Type here" maxlength=300 required id="formability"></textarea><br><br>
+Ability and Achievements:<br><textarea rows=3 cols=50 placeholder="Type here" maxlength=300 required id="formability" name="Ability and Achievements"></textarea><br><br>
 </fieldset>
 <p style="color:white;"><? echo $success; ?></p>
 <p style="color:white;"><? echo $fail; ?></p>
